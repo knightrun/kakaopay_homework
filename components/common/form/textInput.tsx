@@ -7,34 +7,34 @@ export default class TextInput extends Vue {
     input: HTMLInputElement
   }
 
-  @Prop({type: String, required: false, default: 'div'})
+  @Prop({ type: String, required: false, default: 'div' })
   readonly tag: string
 
-  @Prop({type: String, required: false, default: 'text'})
+  @Prop({ type: String, required: false, default: 'text' })
   readonly type: string;
 
-  @Prop({required: false, type: String})
+  @Prop({ type: String, required: false })
   readonly label: string
 
-  @Prop({type: String, required: true})
+  @Prop({ type: String, required: true })
   readonly id: string
 
-  @Prop({type: Object, required: false, default: () => ({ input: '', label: '' })})
+  @Prop({ type: Object, required: false, default: () => ({ input: '', label: '' }) })
   readonly className: { input: string, label: string }
 
-  @Prop({type: [String, Number]})
+  @Prop({ type: [String, Number] })
   readonly value: string | number
 
-  @Prop({type: String, required: false, default: ''})
+  @Prop({ type: String, required: false, default: '' })
   readonly placeholder: string
 
-  @Prop({type: Number})
+  @Prop({ type: Number })
   readonly maxLength: number
 
-  @Prop({type: Boolean, required: false, default: false})
+  @Prop({ type: Boolean, required: false, default: false })
   readonly readonly: boolean
 
-  @Prop({type: Boolean, required: false, default: false})
+  @Prop({ type: Boolean, required: false, default: false })
   readonly disabled: boolean
 
   @Prop({ type: String, required: false, default: 'off'})
