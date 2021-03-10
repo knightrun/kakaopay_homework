@@ -1,8 +1,14 @@
 .content{
     position: relative;
     margin: 0 auto;
-    width: 375px;
+    width: 100%;
     background-color: #26160f;
+}
+
+@media all and (min-width: 376px) {
+    .content{
+        max-width: 375px;
+    }
 }
 
 .banner_wrap{
@@ -18,27 +24,124 @@ footer{
     color:#fff;
 }
 
+.txt{
+    position: absolute;
+}
+
+.txt_1{
+    width: 179px;
+    top: 83px;
+    left: 96px;
+}
+
+.txt_2{
+    width: 215px;
+    top: 65px;
+    left: 77px
+}
+
+.txt_3{
+    width: 215px;
+    top: 120px;
+    left: 82px;
+}
+
+.txt_4{
+    width: 50px;
+    top: 130px;
+    left: 132px;
+}
+
+.txt_5{
+    width: 318px;
+    top: 70px;
+    left: 30px;
+}
+
 .money{
     position: absolute;
-    top: 22%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
+    top: 227px;
+    left: 41px;
+    width: 305px;
+    opacity: 0;
 }
 
 .hand_wrap{
-    position: absolute;
+    opacity: 0;
 }
 
 .hand_wrap > div{
-    display: inline-block;
-    /*position: absolute;*/
+    position: absolute;
 }
 
 .hand_wrap .hand_right{
-
+    width: 50px;
+    top: 374px;
+    left: 75px;
 }
 
-.hand_wrap .hand_right{
+.hand_wrap .total_money{
+    width: 118px;
+    top: 359px;
+    left: 125px;
+}
 
+.hand_wrap .hand_left{
+    width: 52px;
+    top: 357px;
+    left: 251px;
+}
+
+.coin{
+    position: absolute;
+}
+
+.coin_1{
+    width: 48px;
+    left: 0;
+    top: 121px;
+}
+
+.coin_2{
+    width: 22px;
+    left: 0;
+    top: 308px;
+}
+
+.coin_3{
+    width: 39px;
+    left: 65px;
+    top: 238px;
+}
+
+.coin_4{
+    width: 60px;
+    right: 2px;
+    top: 173px;
+}
+
+.coin_5{
+    width: 32px;
+    right: 37px;
+    top: 221px;
+}
+
+.coin_6{
+    width: 57px;
+    right: 0;
+    top: 319px;
+}
+
+.sns_wrap{
+    position: absolute;
+    width: 347px;
+    left: 14px;
+    top: 583px;
+}
+
+.button_wrap{
+    position: fixed;
+    width: 367px;
+    right: 0;
+    bottom: 0;
 }
