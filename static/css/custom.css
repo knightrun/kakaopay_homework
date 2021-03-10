@@ -1,15 +1,44 @@
 .content{
-    display: flex;
-    height:100vh;
-    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    width: 375px;
+    background-color: #26160f;
 }
-.content > a{
-    flex:1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    font-size: 24px;
-    font-weight: bold;
+
+.banner_wrap{
+    height:100px;
+    padding:20px;
     color:#fff;
+    background-color: #ff4d15;
+}
+
+footer{
+    height:200px;
+    padding:20px;
+    color:#fff;
+}
+
+.money{
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+.hand_wrap{
+    position: absolute;
+}
+
+.hand_wrap > div{
+    display: inline-block;
+    /*position: absolute;*/
+}
+
+.hand_wrap .hand_right{
+
+}
+
+.hand_wrap .hand_right{
+
 }

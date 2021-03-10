@@ -14,13 +14,29 @@
     <meta property="og:title" content="">
     <meta property="og:description" content="">
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <style type="text/css">
+        .main_content{
+            display: flex;
+            height:100vh;
+            flex-direction: column;
+        }
+        .main_content > a{
+            flex:1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-size: 24px;
+            font-weight: bold;
+            color:#fff;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <a href="/join/form" style="background-color: #2d6393">homework_1</a>
-            <a href="/html/homework.html" style="background-color: #cb3c21">homework_2</a>
+    <div class="main_container">
+        <div class="main_content">
+            <a href="/html/homework.html" style="background-color: #cb3c21">homework_1</a>
+            <a href="/join/form" style="background-color: #2d6393">homework_2</a>
         </div>
     </div>
 </body>

@@ -1,6 +1,4 @@
 .join{
-    padding: 0 20px;
-
     &_complete{
         display: flex;
         align-items: center;
@@ -37,7 +35,8 @@
     &_form{
         margin: 0 auto;
         width: 100%;
-        max-width: 400px;
+        padding: 0 20px;
+        max-width: 375px;
     }
 
     .title{
