@@ -13,19 +13,29 @@ export default class PhoneNumberCertification extends Vue {
 
   private nationNo: string = ''
   private phoneNo: number | string = ''
+  private certYn: boolean = false
 
   onInput() {
     this.$emit('input', this.nationNo + this.phoneNo)
   }
 
   selfCert() {
-    window.open('')
+    if(this.nationNo === ''){
+      alert('휴대폰 앞자리를 선택해주세요.')
+      return false
+    } else if(this.phoneNo === ''){
+      alert('휴대폰 번호를 입력해 주세요.')
+      return false
+    }
+
+    this.certYn = true
+    this.$emit('cert', this.certYn)
   }
 
   render(h: CreateElement): VNode {
     return (
         <div class="certification row">
-          <span>휴대폰</span>
+          <span>휴대폰*</span>
           <div class="phone-number_wrap">
             <custom-select
                 id="nationNo"
@@ -34,6 +44,7 @@ export default class PhoneNumberCertification extends Vue {
                 options={phoneData}
                 onInput={this.onInput}
                 v-model={this.nationNo}
+                disabled={this.certYn}
             />
             <text-input
                 type="tel"
@@ -45,10 +56,18 @@ export default class PhoneNumberCertification extends Vue {
                 placeholder="전화번호 입력"
                 onInput={this.onInput}
                 v-model={this.phoneNo}
+                disabled={this.certYn}
             />
           </div>
           <div class="btn-wrap">
-            <button type="button" class="btn btn-cert" onClick={this.selfCert}>인증</button>
+            <button
+                type="button"
+                class={["btn btn-cert",{completed:this.certYn}]}
+                onClick={this.selfCert}
+                disabled={this.certYn}
+            >
+              {this.certYn ? '인증완료' : '인증'}
+            </button>
           </div>
         </div>
     )

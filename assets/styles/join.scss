@@ -1,6 +1,39 @@
 .join{
     padding: 0 20px;
 
+    &_complete{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #f1f1f1;
+        padding: 0 40px;
+
+        .title_wrap{
+            h1{
+                font-size:24px;
+            }
+        }
+
+        .button_wrap{
+            width: 100%;
+            margin-top:40px;
+
+            button{
+                display: block;
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                border: none;
+                background-color: #333;
+                font-size: 16px;
+                color: #fff;
+                border-radius: 5px;
+            }
+        }
+    }
+
     &_form{
         margin: 0 auto;
         width: 100%;
@@ -75,6 +108,10 @@
                 line-height: 40px;
                 font-size:14px;
                 background-color: #1890ff;
+
+                &.completed{
+                    background-color: #333;
+                }
             }
         }
     }

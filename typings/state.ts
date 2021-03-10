@@ -8,3 +8,13 @@ export interface ISelectOptions {
   value: string
   selected?: boolean
 }
+
+export interface IJoinFormData {
+  userId: string
+  userPassword: string
+  gender: string
+  birthday: string
+  phoneNo: string
+  certYn: boolean
+  agree: boolean
+}
