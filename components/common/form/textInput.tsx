@@ -1,5 +1,5 @@
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { CreateElement, VNode } from 'vue'
+import {Vue, Component, Prop} from 'nuxt-property-decorator'
+import {CreateElement, VNode} from 'vue'
 
 @Component
 export default class TextInput extends Vue {
@@ -7,37 +7,37 @@ export default class TextInput extends Vue {
     input: HTMLInputElement
   }
 
-  @Prop({ type: String, required: false, default: 'div' })
+  @Prop({type: String, default: 'div'})
   readonly tag: string
 
-  @Prop({ type: String, required: false, default: 'text' })
+  @Prop({type: String, default: 'text'})
   readonly type: string;
 
-  @Prop({ type: String, required: false })
+  @Prop({type: String})
   readonly label: string
 
-  @Prop({ type: String, required: true })
+  @Prop({type: String, required: true})
   readonly id: string
 
-  @Prop({ type: Object, required: false, default: () => ({ input: '', label: '' }) })
+  @Prop({type: Object, default: () => ({input: '', label: ''})})
   readonly className: { input: string, label: string }
 
-  @Prop({ type: [String, Number] })
+  @Prop({type: [String, Number]})
   readonly value: string | number
 
-  @Prop({ type: String, required: false, default: '' })
+  @Prop({type: String, default: ''})
   readonly placeholder: string
 
-  @Prop({ type: Number })
+  @Prop({type: Number})
   readonly maxLength: number
 
-  @Prop({ type: Boolean, required: false, default: false })
+  @Prop({type: Boolean, default: false})
   readonly readonly: boolean
 
-  @Prop({ type: Boolean, required: false, default: false })
+  @Prop({type: Boolean, default: false})
   readonly disabled: boolean
 
-  @Prop({ type: String, required: false, default: 'off'})
+  @Prop({type: String, default: 'off'})
   readonly autocomplete: string
 
   onInput(event: Event) {
@@ -71,39 +71,39 @@ export default class TextInput extends Vue {
 
   render(h: CreateElement): VNode {
     return (
-      h(
-        this.tag,
-        {},
-        [
-          this.label ?
-            <label
-              for={this.id}
-              class={this.className.label}
-            >
-              {this.label}
-            </label>
-            : null,
-          <input
-            type={this.type}
-            id={this.id}
-            class={this.className.input }
-            placeholder={this.placeholder}
-            maxlength={this.maxLength}
-            disabled={this.disabled}
-            readonly={this.readonly}
-            autocomplete={this.autocomplete}
-            value={this.value}
-            onInput={this.onInput}
-            onKeypress={this.onKeyPress}
-            onKeyup={this.onKeyUp}
-            onKeydown={this.onKeyDown}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onClick={this.onClick}
-            ref="input"
-          />
-        ]
-      )
+        h(
+            this.tag,
+            {},
+            [
+              this.label ?
+                  <label
+                      for={this.id}
+                      class={this.className.label}
+                  >
+                    {this.label}
+                  </label>
+                  : null,
+              <input
+                  type={this.type}
+                  id={this.id}
+                  class={this.className.input}
+                  placeholder={this.placeholder}
+                  maxlength={this.maxLength}
+                  disabled={this.disabled}
+                  readonly={this.readonly}
+                  autocomplete={this.autocomplete}
+                  value={this.value}
+                  onInput={this.onInput}
+                  onKeypress={this.onKeyPress}
+                  onKeyup={this.onKeyUp}
+                  onKeydown={this.onKeyDown}
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                  onClick={this.onClick}
+                  ref="input"
+              />
+            ]
+        )
     )
   }
 }

@@ -2,7 +2,7 @@ import { CreateElement, VNode } from 'vue'
 import { Component, Vue } from 'nuxt-property-decorator'
 
 //component
-import JoinForm from "~/components/join/joinForm"
+import RequiredForm from "~/components/join/requiredForm"
 
 //style
 import '~/assets/styles/join.scss'
@@ -12,7 +12,7 @@ export default class Join extends Vue {
   render(h: CreateElement): VNode {
     return (
       <section class="join">
-        <JoinForm />
+        <RequiredForm />
       </section>
     )
   }

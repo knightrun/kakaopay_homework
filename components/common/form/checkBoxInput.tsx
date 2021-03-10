@@ -1,15 +1,15 @@
-import { CreateElement, VNode } from 'vue'
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import {CreateElement, VNode} from 'vue'
+import {Component, Vue, Prop} from 'nuxt-property-decorator'
 
 @Component
 export default class CheckBoxInput extends Vue {
-  @Prop({ type: String, required: true })
+  @Prop({type: String, required: true})
   readonly id: string
 
-  @Prop({ type: String, required: false })
+  @Prop({type: String})
   readonly label: string
 
-  @Prop({ type: Object, required: false, default: () => ({ input: '', label: '' }) })
+  @Prop({type: Object, default: () => ({input: '', label: ''})})
   readonly className: { input: string, label: string }
 
   onChange(event: Event) {
@@ -19,15 +19,15 @@ export default class CheckBoxInput extends Vue {
 
   render(h: CreateElement): VNode {
     return (
-      <div class="check-box_wrap">
-        <input
-            type="checkbox"
-            id={this.id}
-            onChange={ this.onChange }
-            class={this.className.input}
-        />
-        { this.label && <label for={this.id}><span class={this.className.label}>{ this.label }</span></label> }
-      </div>
+        <div class="check-box_wrap">
+          <input
+              type="checkbox"
+              id={this.id}
+              onChange={this.onChange}
+              class={this.className.input}
+          />
+          {this.label && <label for={this.id}><span class={this.className.label}>{this.label}</span></label>}
+        </div>
     )
   }
 }

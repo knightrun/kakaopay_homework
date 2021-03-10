@@ -8,10 +8,13 @@ export default class RadioInput extends Vue {
   @Prop({ type: Array, default: () => [] })
   readonly items: IRadioList[]
 
+  @Prop({ type: String, default: '' })
+  readonly title: string
+
   @Prop({ type: String, required: true })
   readonly group: string
 
-  @Prop({ type: Object, required: false, default: () => ({ input: '', label: '' }) })
+  @Prop({ type: Object, default: () => ({ input: '', label: '' }) })
   readonly className: { input: string, label: string }
 
   onChange(event: Event) {

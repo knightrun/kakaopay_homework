@@ -1,7 +1,7 @@
 import {CreateElement, VNode} from 'vue'
 import {Component, Prop, Vue} from 'nuxt-property-decorator'
 
-import { ISelectOptions } from '@/typings/state'
+import {ISelectOptions} from '@/typings/state'
 
 @Component
 export default class SelectCustom extends Vue {
@@ -10,22 +10,22 @@ export default class SelectCustom extends Vue {
     optionTitle: HTMLOptionElement
   }
 
-  @Prop({ type: String, required: false, default: '' })
+  @Prop({type: String, default: ''})
   readonly id: string
 
-  @Prop({ type: String, required: false })
+  @Prop({type: String})
   readonly label: string
 
-  @Prop({ type: String, required: false, default: '' })
+  @Prop({type: String, default: ''})
   readonly optionTitle: string
 
-  @Prop({ type: Boolean, default: false })
+  @Prop({type: Boolean, default: false})
   readonly disabled: boolean
 
-  @Prop({ type: Array, required: true })
+  @Prop({type: Array, required: true})
   readonly options: ISelectOptions[]
 
-  onChange(event: Event){
+  onChange(event: Event) {
     const val = (event.target as HTMLInputElement).value
     this.$emit('input', val)
   }
@@ -33,23 +33,24 @@ export default class SelectCustom extends Vue {
   render(h: CreateElement): VNode {
     return (
         <div class="select_wrap">
-          { this.label && <label for={ this.id } class="screen-out">{ this.label }</label> }
+          {this.label && <label for={this.id} class="screen-out">{this.label}</label>}
           <select
-              id={ this.id }
+              id={this.id}
               ref="select"
-              onChange={ this.onChange }
-              value={ this.options.some(option => option.selected) ? this.options.filter(option => option.selected)[0].value : '' }
-              disabled={ this.disabled }
+              onChange={this.onChange}
+              value={this.options.some(option => option.selected) ? this.options.filter(option => option.selected)[0].value : ''}
+              disabled={this.disabled}
           >
-            { (this.optionTitle && !this.options.some(option => option.selected)) && <option value="" ref="optionTitle">{ this.optionTitle }</option> }
-            { this.options.map((option, index) => (
+            {(this.optionTitle && !this.options.some(option => option.selected)) &&
+            <option value="" ref="optionTitle">{this.optionTitle}</option>}
+            {this.options.map((option, index) => (
                 <option
-                    key={ `${this.id}-${index}` }
-                    value={ option.value }
+                    key={`${this.id}-${index}`}
+                    value={option.value}
                 >
-                  { option.label }
+                  {option.label}
                 </option>
-            )) }
+            ))}
           </select>
         </div>
     )
