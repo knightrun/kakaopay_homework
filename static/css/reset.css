@@ -23,4 +23,9 @@ img { border: 0; max-width: 100%; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+button{
+    outline: none;
+    border: 0;
+}
+
 * { box-sizing: border-box; background: none;}

@@ -12,16 +12,16 @@
 }
 
 .banner_wrap{
-    height:100px;
-    padding:20px;
-    color:#fff;
+    height: 100px;
+    padding: 20px;
+    color: #f9d648;
     background-color: #ff4d15;
 }
 
 footer{
-    height:200px;
-    padding:20px;
-    color:#fff;
+    height: 200px;
+    padding: 20px;
+    color: #f9d648;
 }
 
 .txt{
@@ -63,33 +63,38 @@ footer{
     top: 227px;
     left: 41px;
     width: 305px;
-    opacity: 0;
-}
-
-.hand_wrap{
-    opacity: 0;
+    animation: money-move .8s linear infinite;
+    -webkit-animation: money-move .8s linear infinite;
 }
 
 .hand_wrap > div{
     position: absolute;
 }
 
-.hand_wrap .hand_right{
-    width: 50px;
-    top: 374px;
-    left: 75px;
-}
-
 .hand_wrap .total_money{
     width: 118px;
     top: 359px;
     left: 125px;
+    animation: money-scale .8s cubic-bezier(0, 1, 1, 1) infinite;
+    -webkit-animation: money-scale .8s cubic-bezier(0, 1, 1, 1) infinite;
+}
+
+.hand_wrap .hand_right{
+    width: 50px;
+    top: 374px;
+    left: 75px;
+    transform-origin: 0 100%;
+    animation: rotate-right .8s cubic-bezier(0, 1, 1, 1) infinite;
+    -webkit-animation: rotate-right .8s cubic-bezier(0, 1, 1, 1) infinite;
 }
 
 .hand_wrap .hand_left{
     width: 52px;
     top: 357px;
     left: 251px;
+    transform-origin: 100% 100%;
+    animation: rotate-left .8s cubic-bezier(0, 1, 1, 1) infinite;
+    -webkit-animation: rotate-left .8s cubic-bezier(0, 1, 1, 1) infinite;
 }
 
 .coin{
@@ -144,4 +149,137 @@ footer{
     width: 367px;
     right: 0;
     bottom: 0;
+}
+
+.popup_wrap{
+    display: none;
+}
+
+.popup{
+    position: fixed;
+    width: 100%;
+    top:0;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.popup > div{
+    flex:1;
+    width:100%;
+}
+
+.popup_top{
+    background: url("/images/popup_top.png") bottom/cover no-repeat;
+}
+
+.popup_bottom{
+    background: url("/images/popup_bottom.png") top/cover no-repeat;
+}
+
+.btn_close{
+    position: absolute;
+    right:0;
+    top:0;
+    width: 100px;
+    height :100px;
+    background: red;
+    opacity: 0;
+}
+
+.bounce {
+    display: block;
+
+}
+
+.bounce .bg-color{
+    animation: bg-color .3s ease-in;
+    -webkit-animation: bg-color .3s ease-in;
+}
+
+.bounce .bounce-top{
+    animation: bounce-top .5s ease-in;
+    -webkit-animation: bounce-top .5s ease-in;
+}
+
+.bounce .bounce-bottom{
+    animation: bounce-bottom .5s ease-in;
+    -webkit-animation: bounce-bottom .5s ease-in;
+}
+
+@keyframes rotate-left {
+    10% { transform: rotate(20deg) }
+}
+
+@-webkit-keyframes rotate-left {
+    10% { transform: rotate(20deg) }
+}
+
+@keyframes rotate-right {
+    10% { transform: rotate(-20deg) }
+}
+
+@-webkit-keyframes rotate-right {
+    10% { transform: rotate(-20deg) }
+}
+
+@keyframes money-move {
+    10% { transform: translateY(-2px) }
+}
+
+@-webkit-keyframes money-move {
+    10% { transform: translateY(-2px) }
+}
+
+@keyframes money-scale {
+    10% { transform: scale(1.1) }
+}
+
+@-webkit-keyframes money-scale {
+    10% { transform: scale(1.1) }
+}
+
+@keyframes bg-color {
+    from { background-color: #666 }
+}
+
+@-webkit-keyframes bg-color {
+    from { background-color: #666 }
+}
+
+@keyframes bounce-top {
+    0% { transform: translateY(80px) }
+    20% { transform: translateY(0) }
+    40% { transform: translateY(30px) }
+    60% { transform: translateY(0) }
+    80% { transform: translateY(10px) }
+    100% { transform: translateY(0px) }
+}
+@-webkit-keyframes bounce-top {
+    0% { transform: translateY(80px) }
+    20% { transform: translateY(0) }
+    40% { transform: translateY(30px) }
+    60% { transform: translateY(0) }
+    80% { transform: translateY(10px) }
+    100% { transform: translateY(0px) }
+}
+
+@keyframes bounce-bottom {
+    0% { transform: translateY(-80px) }
+    20% { transform: translateY(0) }
+    40% { transform: translateY(-30px) }
+    60% { transform: translateY(0) }
+    80% { transform: translateY(-10px) }
+    100% { transform: translateY(0px) }
+}
+@-webkit-keyframes bounce-bottom {
+    0% { transform: translateY(-80px) }
+    20% { transform: translateY(0) }
+    40% { transform: translateY(-30px) }
+    60% { transform: translateY(0) }
+    80% { transform: translateY(-10px) }
+    100% { transform: translateY(0px) }
 }

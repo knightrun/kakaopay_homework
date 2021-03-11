@@ -15,9 +15,21 @@ function getViewportOffset() {
 }
 
 function addEvent() {
+  const btnPopup = document.querySelector('.btn_popup');
+  const popupWrap = document.querySelector('.popup_wrap');
+  const btnClose = document.querySelector('.btn_close');
+
+  btnPopup.addEventListener('click', function(){
+    popupWrap.classList.add('bounce')
+  });
+
+  btnClose.addEventListener('click', function(){
+    popupWrap.classList.remove('bounce')
+  });
+
   window.addEventListener('load', function() {
     viewportSize = viewportOffset = null;
-  })
+  });
 }
 
 function onLoad() {
