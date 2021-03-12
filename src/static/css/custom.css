@@ -51,15 +51,13 @@ footer{
 }
 
 @keyframes textNeon {
-    50% { opacity: 1 }
+    50%, 70% { opacity: 1 }
     60% { opacity: .8 }
-    70% { opacity: 1 }
 }
 
 @-webkit-keyframes textNeon {
-    50% { opacity: 1 }
+    50%, 70% { opacity: 1 }
     60% { opacity: .8 }
-    70% { opacity: 1 }
 }
 
 .txt_3{
@@ -72,16 +70,14 @@ footer{
 }
 
 @keyframes textNeon2 {
-    20% { opacity: .5 }
+    20%, 50% { opacity: .5 }
     35% { opacity: 1 }
-    50% { opacity: .5 }
     65% { opacity: .8 }
 }
 
 @-webkit-keyframes textNeon2 {
-    20% { opacity: .5 }
+    20%, 50% { opacity: .5 }
     35% { opacity: 1 }
-    50% { opacity: .5 }
     65% { opacity: .8 }
 }
 
@@ -95,19 +91,13 @@ footer{
 }
 
 @keyframes textNeon3 {
-    78% { opacity: 1 }
-    81% { opacity: .5 }
-    84% { opacity: 1 }
-    87% { opacity: .5 }
-    90% { opacity: 1 }
+    78%, 84%, 90% { opacity: 1 }
+    81%, 87% { opacity: .5 }
 }
 
 @-webkit-keyframes textNeon3 {
-    78% { opacity: 1 }
-    81% { opacity: .5 }
-    84% { opacity: 1 }
-    87% { opacity: .5 }
-    90% { opacity: 1 }
+    78%, 84%, 90% { opacity: 1 }
+    81%, 87% { opacity: .5 }
 }
 
 .txt_5{
@@ -232,6 +222,18 @@ footer{
     width: 347px;
     left: 14px;
     top: 583px;
+    opacity: 0;
+}
+
+.blank{
+    animation: snsBlank 3s linear;
+    opacity: 1;
+}
+
+@keyframes snsBlank {
+    0%, 50% { opacity: 0 }
+    54%, 60% { opacity: .5 }
+    51%, 57%, 63%, 100% { opacity: 1 }
 }
 
 .button_wrap{
@@ -306,19 +308,15 @@ footer{
 
 @keyframes bounceTop {
     0% { transform: translateY(80px) }
-    20% { transform: translateY(0) }
+    20%, 60%, 100% { transform: translateY(0) }
     40% { transform: translateY(30px) }
-    60% { transform: translateY(0) }
     80% { transform: translateY(10px) }
-    100% { transform: translateY(0px) }
 }
 @-webkit-keyframes bounceTop {
     0% { transform: translateY(80px) }
-    20% { transform: translateY(0) }
+    20%, 60%, 100% { transform: translateY(0) }
     40% { transform: translateY(30px) }
-    60% { transform: translateY(0) }
     80% { transform: translateY(10px) }
-    100% { transform: translateY(0px) }
 }
 
 .bounce .bounce-bottom{
@@ -328,17 +326,13 @@ footer{
 
 @keyframes bounceBottom {
     0% { transform: translateY(-80px) }
-    20% { transform: translateY(0) }
+    20%, 60%, 100% { transform: translateY(0) }
     40% { transform: translateY(-30px) }
-    60% { transform: translateY(0) }
     80% { transform: translateY(-10px) }
-    100% { transform: translateY(0px) }
 }
 @-webkit-keyframes bounceBottom {
     0% { transform: translateY(-80px) }
-    20% { transform: translateY(0) }
+    20%, 60%, 100% { transform: translateY(0) }
     40% { transform: translateY(-30px) }
-    60% { transform: translateY(0) }
     80% { transform: translateY(-10px) }
-    100% { transform: translateY(0px) }
 }
