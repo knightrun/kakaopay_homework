@@ -3,6 +3,7 @@
     margin: 0 auto;
     width: 100%;
     background: #26160f url("/images/bg.png") top/cover no-repeat fixed;
+    overflow: hidden;
 }
 
 @media all and (min-width: 376px) {
@@ -12,22 +13,93 @@
 }
 
 .bg_wrap{
+    position: relative;
     width: 100%;
     height: 781px;
+    z-index: 1;
 }
 
 .banner_wrap{
+    position: relative;
     height: 100px;
     padding: 20px;
     color: #f9d648;
     background-color: #ff4d15;
+    z-index: 1;
 }
 
 footer{
-    height: 200px;
+    position: relative;
+    height: 300px;
     padding: 20px;
     color: #f9d648;
     background-color: #26160f;
+    z-index: 1;
+}
+
+.spark{
+    position: absolute;
+    overflow: hidden;
+}
+
+.spark_1{
+    top: 89px;
+    left: 123px;
+    width: 16px;
+    height: 12px;
+    transform-origin: bottom;
+    animation: sparkScale 3s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: sparkScale 3s cubic-bezier(0, 1, 1, 1);
+}
+
+@keyframes sparkScale {
+    0%, 40% { transform: scaleY(0); }
+    45% { transform: scaleY(1); }
+}
+
+@-webkit-keyframes sparkScale {
+    0%, 40% { transform: scaleY(0); }
+    45% { transform: scaleY(1); }
+}
+
+.spark_3{
+    top: 35px;
+    left: 59px;
+    width: 57px;
+    height: 61px;
+    transform-origin: bottom;
+    animation: sparkScale2 3s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: sparkScale2 3s cubic-bezier(0, 1, 1, 1);
+}
+
+@keyframes sparkScale2 {
+    0%, 42% { transform: scaleY(0); }
+    47% { transform: scaleY(1); }
+}
+
+@-webkit-keyframes sparkScale2 {
+    0%, 42% { transform: scaleY(0); }
+    47% { transform: scaleY(1); }
+}
+
+.spark_4{
+    top: 20px;
+    left: 104px;
+    width: 33px;
+    height: 70px;
+    transform-origin: bottom;
+    animation: sparkScale3 3s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: sparkScale3 3s cubic-bezier(0, 1, 1, 1);
+}
+
+@keyframes sparkScale3 {
+    0%, 44% { transform: scaleY(0); }
+    49% { transform: scaleY(1); }
+}
+
+@-webkit-keyframes sparkScale3 {
+    0%, 44% { transform: scaleY(0); }
+    49% { transform: scaleY(1); }
 }
 
 .txt{
@@ -52,12 +124,12 @@ footer{
 
 @keyframes textNeon {
     50%, 70% { opacity: 1 }
-    60% { opacity: .8 }
+    60% { opacity: .7 }
 }
 
 @-webkit-keyframes textNeon {
     50%, 70% { opacity: 1 }
-    60% { opacity: .8 }
+    60% { opacity: .7 }
 }
 
 .txt_3{
@@ -185,36 +257,88 @@ footer{
     width: 48px;
     left: 0;
     top: 121px;
+    animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
 }
 
 .coin_2{
     width: 22px;
     left: 0;
     top: 308px;
+    animation: coinMove2 1s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: coinMove2 1s cubic-bezier(0, 1, 1, 1);
 }
 
 .coin_3{
     width: 39px;
     left: 65px;
     top: 238px;
+    animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
 }
 
 .coin_4{
     width: 60px;
     right: 2px;
     top: 173px;
+    animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
 }
 
 .coin_5{
     width: 32px;
     right: 37px;
     top: 221px;
+    animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: coinMove .8s cubic-bezier(0, 1, 1, 1);
 }
 
 .coin_6{
     width: 57px;
     right: 0;
     top: 319px;
+    animation: coinMove2 1s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: coinMove2 1s cubic-bezier(0, 1, 1, 1);
+}
+
+.coin_7{
+    width: 340px;
+    right: 0;
+    top: -380px;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    animation: coinMove3 1s cubic-bezier(0, 1, 1, 1);
+    -webkit-animation: coinMove3 1s cubic-bezier(0, 1, 1, 1);
+}
+
+@keyframes coinMove {
+    0%, 80% { transform: translateY(-280px) }
+    100% { transform: translateY(0) }
+}
+
+@-webkit-keyframes coinMove {
+    0%, 80% { transform: translateY(-280px) }
+    100% { transform: translateY(0) }
+}
+
+@keyframes coinMove2 {
+    0%, 70% { transform: translateY(-410px) }
+    100% { transform: translateY(0) }
+}
+
+@-webkit-keyframes coinMove2 {
+    0%, 70% { transform: translateY(-410px) }
+    100% { transform: translateY(0) }
+}
+
+@keyframes coinMove3 {
+    0%, 60% { top: -380px; }
+    100% { top: 785px; }
+}
+
+@-webkit-keyframes coinMove3 {
+    0%, 60% { top: -380px; }
+    100% { top: 785px; }
 }
 
 .sns_wrap{
@@ -242,10 +366,13 @@ footer{
     left:calc(50% + 4px);
     transform: translateX(-50%);
     bottom: 0;
+    z-index: 10;
 }
 
 .popup_wrap{
+    position: relative;
     display: none;
+    z-index: 99;
 }
 
 .popup{
